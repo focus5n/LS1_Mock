@@ -25,7 +25,7 @@ public class BookServiceMockTest {
         Book book = new Book();
         System.out.println(bookRepository.getClass());
         // 테스트할 기능을 추가할 땐 이곳에 when 추가하기
-        when(bookRepository.save(book)).thenReturn(book);
+        when(bookRepository.save(book)).thenReturn(book); // 이런 걸 stupping 이라고 함.
 
         // when, 실행
         BookService bookService = new BookService(bookRepository);
