@@ -24,6 +24,7 @@ public class BookServiceMockTest {
         // given, 준비
         Book book = new Book();
         System.out.println(bookRepository.getClass());
+        // 테스트할 기능을 추가할 땐 이곳에 when 추가하기
         when(bookRepository.save(book)).thenReturn(book);
 
         // when, 실행
