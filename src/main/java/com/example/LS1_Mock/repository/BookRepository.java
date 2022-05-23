@@ -3,6 +3,7 @@ package com.example.LS1_Mock.repository;
 import com.example.LS1_Mock.domain.Book;
 import org.springframework.stereotype.Repository;
 
+@SuppressWarnings("ALL")
 @Repository
 public class BookRepository {
     public Book save(Book book) { return null; }
