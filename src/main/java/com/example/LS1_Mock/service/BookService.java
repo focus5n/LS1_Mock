@@ -28,9 +28,11 @@ public class BookService {
     public Book find(Book book) { return book; }
     public void setBookRepository(BookRepository bookRepository) { this.bookRepository = bookRepository; }
 
+    // 객체 초기화 (autowired 이미 된 상태)
     @PostConstruct
     public void postConstructor() {
         System.out.println("+++++++++++");
+        System.out.println("BookService 초기화");
         System.out.println(bookRepository.getClass());
         System.out.println("+++++++++++");
     }

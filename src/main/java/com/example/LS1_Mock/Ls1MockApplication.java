@@ -16,7 +16,7 @@ public class Ls1MockApplication {
 
 	public static void main(String[] args) {
 
-		// XML Config component csan
+		// Case1: XML Config. ComponentScan
 		ApplicationContext context0 = new ClassPathXmlApplicationContext("application.xml");
 		String[] beanDefinitionNames0 = context0.getBeanDefinitionNames();
 		System.out.println("===========bean names==========");
@@ -24,28 +24,28 @@ public class Ls1MockApplication {
 		BookService bookService = context0.getBean("bookService", BookService.class);
 		System.out.println(bookService.getClass());
 
-		// Java Config1 java class bean method
+		// Case2: Java Config1. Java Class + Bean Method
 		ApplicationContext context1 = new AnnotationConfigApplicationContext(ApplicationConfig1.class);
 		System.out.println("============bean names==========");
 		String[] beanDefinitionNames1 = context1.getBeanDefinitionNames();
 		System.out.println(Arrays.toString(beanDefinitionNames1));
 		BookService bookService1 = (BookService) context1.getBean("bookService");
 
-		// Case3. Java Config2 java class
+		// Case3. Java Config2. Java Class
 		ApplicationContext context2 = new AnnotationConfigApplicationContext(ApplicationConfig2.class);
 		System.out.println("============bean names==========");
 		String[] beanDefinitionNames2 = context2.getBeanDefinitionNames();
 		System.out.println(Arrays.toString(beanDefinitionNames2));
 		BookService bookService2 = (BookService) context2.getBean("bookService");
 
-		// Case4. Java Config3 java class
+		// Case4. Java Config3. Java Class
 		ApplicationContext context3 = new AnnotationConfigApplicationContext(ApplicationConfig3.class);
 		System.out.println("============bean names==========");
 		String[] beanDefinitionNames3 = context3.getBeanDefinitionNames();
 		System.out.println(Arrays.toString(beanDefinitionNames3));
 		BookService bookService3 = (BookService) context3.getBean("bookService");
 
-		// Case5. SpringBoot component scan
+		// Case5. SpringBoot ComponentScan
 		ApplicationContext context4 = new AnnotationConfigApplicationContext(Ls1MockApplication.class);
 		System.out.println("============bean names==========");
 		String[] beanDefinitionNames4 = context4.getBeanDefinitionNames();
