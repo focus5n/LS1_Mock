@@ -3,13 +3,22 @@ package com.example.LS1_Mock.service;
 import com.example.LS1_Mock.BookStatus;
 import com.example.LS1_Mock.domain.Book;
 import com.example.LS1_Mock.repository.BookRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+import javax.annotation.PostConstruct;
 import java.util.Date;
 
+@Service
 public class BookService {
+    @Autowired
     private BookRepository bookRepository;
 
     public BookService(BookRepository bookRepository) { this.bookRepository = bookRepository; }
+
+    public BookService() {
+
+    }
 
     public Book save(Book book) {
         book.setCreated(new Date());
@@ -18,4 +27,11 @@ public class BookService {
     }
     public Book find(Book book) { return book; }
     public void setBookRepository(BookRepository bookRepository) { this.bookRepository = bookRepository; }
+
+    @PostConstruct
+    public void postConstructor() {
+        System.out.println("+++++++++++");
+        System.out.println(bookRepository.getClass());
+        System.out.println("+++++++++++");
+    }
 }
